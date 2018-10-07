@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chenyangsocool.ssm.dao.StuDao">
+    <resultMap id="BaseResultMap" type="com.chenyangsocool.ssm.model.StuBean" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="INTEGER" />
+        <result column="sex" property="sex" jdbcType="INTEGER" />
+        <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List_Stu" >
+        id, name, age, sex, pwd
+    </sql>
+
+    <select id="login" resultMap="BaseResultMap">
+        select
+        *
+        from stu
+        where name = #{0} AND pwd = #{1}
+	</select>
+
+    <insert id="register" parameterType="com.chenyangsocool.ssm.model.StuBean">
+		insert stu(id,name,pwd) values(#{id},#{name},#{pwd})
+	</insert>
+
+    <select id="getModelById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List_Stu" />
+        from stu
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="getAll" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List_Stu" />
+        from stu
+    </select>
+</mapper>

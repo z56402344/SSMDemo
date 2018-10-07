@@ -11,10 +11,11 @@
     <title>index</title>
 </head>
 <body>
-<h2>test's index</h2>
+<h2>${msg}</h2>
 <br/>
-${test.id}<br/>
-${test.context}<br/>
-${test.viewCount}
+id：${stu.id}<br/>
+名字：${stu.name}<br/>
+年龄：${stu.age}<br/>
+性别：${stu.sex}
 </body>
 </html>

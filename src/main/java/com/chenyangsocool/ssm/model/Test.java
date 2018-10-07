@@ -5,13 +5,13 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value="Test",description="Test")//对类进行swagger注解
 public class Test {
-    @ApiModelProperty(value = "测试id", name = "id")//对类的字段属性进行swagger注解
+    @ApiModelProperty(value="测试id",name="id")//对类的字段属性进行swagger注解
     private int id;
 
-    @ApiModelProperty(value = "测试内容", name = "context")
+    @ApiModelProperty(value="测试内容",name="context")
     private String context;
 
-    @ApiModelProperty(value = "测试内容的浏览数", name = "viewCount")
+    @ApiModelProperty(value="测试内容的浏览数",name="viewCount")
     private int viewCount;
 
     public int getId() {
